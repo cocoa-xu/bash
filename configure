@@ -3285,6 +3285,7 @@ sparc-linux*)	opt_bash_malloc=no ;;	# sparc running linux; requires ELF
 *-cygwin*)	opt_bash_malloc=no ;;	# Cygnus's CYGWIN environment
 # These lack a working sbrk(2)
 aarch64-freebsd*)	opt_bash_malloc=no ;;
+aarch64c*-freebsd*)	opt_bash_malloc=no ;;
 riscv*-freebsd*)	opt_bash_malloc=no ;;
 # Mach-derived systems have a ton of extra malloc functions and lack sbrk(2)
 *-nextstep*)	opt_bash_malloc=no ;;	# NeXT machines running NeXTstep
@@ -9064,7 +9065,7 @@ fi
 rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
            ;;
 
-         arm* | aarch64 )
+         arm* | aarch64 | aarch64c )
            # Assume arm with EABI.
            # On arm64 systems, the C compiler may be generating code in one of
            # these ABIs:

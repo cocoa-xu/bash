@@ -33,6 +33,9 @@
 
 #if !defined (NSIG)
 #  define NSIG 64
+#elif (NSIG < SIGRTMAX)
+#  undef NSIG
+#  define NSIG SIGRTMAX
 #endif
 
 /*
